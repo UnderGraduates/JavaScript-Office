@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS Office : Home</title>
+		<link rel="icon" type="image/ico" href="res/icons/jsoffice_home.ico"/>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<p id="offset"></p>
+			<div id="recent-container" class="col-sm-3">
+				<div id="recent" class="panel panel-default">
+					<div class="panel-heading">
+						<h3>Recent files ... </h3>
+					</div>
+					<div class="panel-body">
+						nothing to show ...
+					</div>
+				</div>
+			</div>
+			<div id="presentation-option-container" class="col-sm-offset-1 col-sm-3">
+				<div class="option-offset"></div>
+				<div id="presentation-option" class="well">
+					<h2 class="option-text">Presentation</h2>
+				</div>
+			</div>
+			<div id="document-option-container" class="col-sm-offset-1 col-sm-3">
+				<div class="option-offset"></div>
+				<div id="document-option" class="well">
+					<h2 class="option-text">Document</h2>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				var presentation_option = $("#presentation-option");
+				var document_option = $("#document-option");
+				setOptionSize();
+				$(window).bind("resize",setOptionSize);
+				presentation_option.css({"background-color":"rgba(244,81,30,0.25)"});
+				document_option.css({"background-color":"rgba(51,122,183,0.25)"});
+				document_option.bind("mouseover",function(){
+					this.style.backgroundColor = "rgba(51,122,183,1)";
+					this.style.cursor="pointer";
+				});
+				document_option.bind("mouseout",function(){	
+					this.style.backgroundColor = "rgba(51,122,183,0.25)";
+				});
+				presentation_option.bind("mouseover",function(){
+					this.style.backgroundColor = "rgba(244,81,30,1)";
+					this.style.cursor="pointer";
+				});
+				presentation_option.bind("mouseout",function(){
+					this.style.backgroundColor = "rgba(244,81,30,0.25)";
+				});
+
+				document_option.bind("click",function(){
+					window.location="#";
+					this.style.backgroundColor = "rgba(51,122,183,0.25)";
+				});
+				presentation_option.bind("click",function(){
+					window.location="#";
+					this.style.backgroundColor = "rgba(244,81,30,0.25)";
+				});
+			});
+			var setOptionSize = function() {
+				$("#recent").css({"height":$(window).height()*0.95+"px"});
+				$(".option-offset").css({"height":$(window).height()*0.07+"px"});
+				$("#presentation-option").css({"height":$(window).height()*0.8+"px"});
+				$("#document-option").css({"height":$(window).height()*0.8+"px"});
+			}
+		</script>
+	</body>
+</html>
