@@ -1,0 +1,19 @@
+{
+  "name": "javascript-office",
+  "homepage": "index.html",
+  "authors": [
+    "kmmanoj <kmmanoj1990@gmail.com>",
+    "nithya <nithyaa945@gmail.com>"
+  ],
+  "description": "Create platform-Independent documents and presentations",
+  "main": "index.html",
+  "keywords": [
+    "document",
+    "presentation"
+  ],
+  "license": "None",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
